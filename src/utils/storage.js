@@ -40,7 +40,7 @@ let defaultValue = {
   inventory: {}
 };
 
-let currData = JSON.parse(localStorage.getItem('localData')) || defaultValue
+let currData = null
 
 const updateLocal = () => {
   localStorage.setItem('localData', JSON.stringify(currData))
@@ -57,15 +57,37 @@ export const getDataFromLocal = () => {
 }
 
 
+// Employee
 export const addEmployee = (employee) => {
   currData.employees.data.push(employee)
   updateLocal()
 }
 
 
-export const getEmployee = (employee) => {
+export const getEmployee = () => {
   return currData.employees.data
 }
 
 
 
+// Customer
+export const addCustomer = (customer) => {
+  currData.customers.data.push(customer)
+  updateLocal()
+}
+
+export const getCustomers = () => {
+  return currData.customers.data
+}
+
+
+
+// Vendor
+export const addVendor = (vendor) => {
+  currData.vendors.data.push(vendor)
+  updateLocal()
+}
+
+export const getVendors = () => {
+  return currData.vendors.data
+}

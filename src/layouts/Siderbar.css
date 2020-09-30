@@ -5,5 +5,23 @@
   }
   
   .site-layout .site-layout-background {
-    background: #fff;
+    /* background: rgba(41, 41, 41, 0.123); */
   }
+
+#btn-home{
+    width: 100%;
+    margin: 10px 0 30px 0;
+    /* background-color: darkslategrey;
+    border-color: darkslategrey; */
+
+}
+
+#icon-home{
+    /* background-color: darkslategrey;
+    border-color: darkslategrey;  */
+
+}
+
+#btn-clear{
+    margin-top: 70px
+}

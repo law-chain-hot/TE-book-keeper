@@ -1,6 +1,23 @@
 import React from 'react'
 import { Table, Tag, Space } from 'antd';
 
+
+const AntTable = (props) => {
+  return (
+    <Table columns={props.col} dataSource={props.data} />
+  )
+}
+
+export default AntTable
+
+
+
+
+
+
+
+/*
+
 const columns = [
   {
     title: 'Name',
@@ -75,13 +92,5 @@ const data = [
   },
 ];
 
-const AntTable = (props) => {
-  // return (
-  //   <Table columns={columns} dataSource={data} />
-  // )
-  return (
-    <Table columns={props.col} dataSource={props.data} />
-  )
-}
 
-export default AntTable
+*/
