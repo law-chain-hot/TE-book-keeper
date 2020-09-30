@@ -54,6 +54,8 @@ const updateLocal = () => {
 export const getDataFromLocal = () => {
   currData = JSON.parse(localStorage.getItem('localData')) || defaultValue
   console.log("getDataFromLocal -> datcurrDataa", currData)
+  // currData.employees.data.splice(1,1)
+  // updateLocal()
 }
 
 

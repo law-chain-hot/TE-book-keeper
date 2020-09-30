@@ -37,6 +37,11 @@ const AntForm = () => {
       <Form.Item
         name={['user', 'companyName']}
         label="Company Name"
+        rules={[
+          {
+            required: true,
+          }
+        ]}
       >
         <Input />
       </Form.Item>
