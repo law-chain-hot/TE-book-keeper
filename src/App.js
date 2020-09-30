@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
 import './App.css';
 
+import Siderbar from './layouts/Siderbar'
+import { BrowserRouter, Route } from 'react-router-dom'
+
+import EmployeeList from './screens/employees/EmployeeList'
+import EmployeeAdd from './screens/employees/EmployeeAdd'
+import { getDataFromLocal } from './utils/storage'
+
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+  useEffect(() => {
+    getDataFromLocal()
+  },[])
+
+  const currContents = (
+    <div>
+      <Route path='/employeelist' exact component={EmployeeList} />
+      <Route path='/employeeadd' exact component={EmployeeAdd} />
     </div>
+  )
+
+
+
+  return (
+    <Siderbar
+      contents={currContents}
+    />
   );
 }
 
