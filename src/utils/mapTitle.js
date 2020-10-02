@@ -6,6 +6,7 @@ const mapTitle = {
     address2: "Address 2",
     city: "City",
     salary: "Salary",
+    ssn: "Social Security Number",
     state: "State",
     withholding: "Withholding",
     zipCode: "ZIP Code",
@@ -13,6 +14,10 @@ const mapTitle = {
     // vendor
     part: "Part",
     priceUnit: "Price/Unit",
+
+    // Pay
+    employee: "Employee",
+    dispusement: "Dispusement",
         
 }
 

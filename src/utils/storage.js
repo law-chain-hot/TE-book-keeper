@@ -37,7 +37,23 @@ let defaultValue = {
     ]
   },
 
-  inventory: {}
+  inventory: {},
+
+  expenses: {
+    payroll: 0,
+    payrollWithHolding: 0,
+    bills: 0,
+    annualExpenses: 0,
+  },
+
+  assets: {
+    cash: 100000,
+    accountsReceivable: 0,
+    inventory: 0,
+    buildings: 100000,
+    equipment: 10000,
+    furniture: 10000,
+  }
 };
 
 let currData = null
@@ -50,7 +66,6 @@ const updateLocal = () => {
   console.dir(data)
 }
 
-
 export const getDataFromLocal = () => {
   currData = JSON.parse(localStorage.getItem('localData')) || defaultValue
   console.log("getDataFromLocal -> datcurrDataa", currData)
@@ -59,16 +74,18 @@ export const getDataFromLocal = () => {
 }
 
 
+
+
 // Employee
 export const addEmployee = (employee) => {
   currData.employees.data.push(employee)
   updateLocal()
 }
 
-
 export const getEmployee = () => {
   return currData.employees.data
 }
+
 
 
 
@@ -84,6 +101,7 @@ export const getCustomers = () => {
 
 
 
+
 // Vendor
 export const addVendor = (vendor) => {
   currData.vendors.data.push(vendor)
@@ -92,4 +110,54 @@ export const addVendor = (vendor) => {
 
 export const getVendors = () => {
   return currData.vendors.data
+}
+
+
+
+
+// Pay
+export const payByID = (id) => {
+  const employee = currData.employees.data.find(employee => employee.id === id)
+  addPayroll(employee)
+  updateLocal()
+}
+
+export const addPayroll = (employee) =>{
+  const [salary, withholding, dispusement] = calculatePay(employee)
+  updateCash(-salary)
+  updateExpenses('payroll', dispusement)
+  updateExpenses('payrollWithHolding', withholding)
+  const payrollHistory = {
+    employee:`${employee.firstName} ${employee.lastName}`,
+    salary: salary,
+    withholding: withholding,
+    dispusement: dispusement
+  }
+  currData.payroll.data.push(payrollHistory)
+}
+
+export const calculatePay = (employee) => {
+  return [employee.salary, employee.salary * 0.2, employee.salary * 0.8]
+}
+
+export const getPayroll = () =>{
+  return currData.payroll.data
+}
+
+
+
+
+// Cash
+const updateCash = (money) => {
+  currData.assets.cash += money
+  updateLocal()
+}
+
+
+
+
+// expenses
+const updateExpenses = (name, money) => {
+  currData.expenses[name] += money
+  updateLocal()
 }

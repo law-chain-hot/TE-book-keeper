@@ -12,16 +12,16 @@ const EmployeeList = function () {
     }, [])
 
     function setCol(employees) {
-
         if (employees.length === 0) return []
-        return Object.keys(employees[0]).map(cur => {
-
-            return {
-                title: mapTitle[cur],
-                dataIndex: cur,
-                key: cur,
-            }
-        })
+        return Object.keys(employees[0])
+                    .filter(keyName => keyName !=='id')
+                    .map(cur => {
+                        return {
+                            title: mapTitle[cur],
+                            dataIndex: cur,
+                            key: cur,
+                        }
+                    })
     }
 
     const col = setCol(empolyees)

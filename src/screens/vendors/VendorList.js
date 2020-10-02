@@ -12,7 +12,6 @@ const VendorList = function () {
     }, [])
 
     function setCol(vendors) {
-
         if (vendors.length === 0) return []
         return Object.keys(vendors[0]).map(cur => {
             return {

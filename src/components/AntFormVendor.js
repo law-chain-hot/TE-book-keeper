@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 
 
 import { addVendor } from '../utils/storage'
+import uniqid from 'uniqid'
 
 
 import { Form, Input, InputNumber, Button } from 'antd';
@@ -27,6 +28,7 @@ const validateMessages = {
 const AntForm = () => {
   const reset = useRef(null)
   const onFinish = (values) => {
+    values.user.id = uniqid()
     console.log(values);
     addVendor(values.user)
     reset.current.resetFields()

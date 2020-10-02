@@ -1,7 +1,8 @@
 import React, { useRef } from 'react'
 
 
-import { addEmployee } from '../utils/storage'
+import { addCustomer } from '../utils/storage'
+import uniqid from 'uniqid'
 
 
 import { Form, Input, InputNumber, Button } from 'antd';
@@ -24,24 +25,33 @@ const validateMessages = {
   },
 };
 
-const AntForm = () => {
+const AntForm = (props) => {
   const reset = useRef(null)
   const onFinish = (values) => {
+    values.user.id = uniqid()
     console.log(values);
-    addEmployee(values.user)
+    addCustomer(values.user)
     reset.current.resetFields()
   };
+
+
 
   return (
     <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages} labelAlign='right' ref={reset}>
       <Form.Item
-        name={['user', 'firstName']}
-        label="First Name"
+        name={['user', 'companyName']}
+        label="Company Name"
         rules={[
           {
             required: true,
           }
         ]}
+      >
+        <Input />
+      </Form.Item>
+      <Form.Item
+        name={['user', 'firstName']}
+        label="First Name"
       >
         <Input />
       </Form.Item>
@@ -87,23 +97,7 @@ const AntForm = () => {
         <Input />
       </Form.Item>
 
-      <Form.Item
-        name={['user', 'ssn']}
-        label="Social Security Number(numbers only)"
-        rules={[
-          {
-            type: 'string',
-            len: 9
-          },
-        ]}
-      >
-        <Input maxLength='9' />
-
-      </Form.Item>
-      <Form.Item name={['user', 'withholding']} label="Withholding">
-        <Input />
-      </Form.Item>
-      <Form.Item name={['user', 'salary']} label="Salary (Dollars)">
+      <Form.Item name={['user', 'price']} label="Price">
         <Input />
       </Form.Item>
 

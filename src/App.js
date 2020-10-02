@@ -3,6 +3,7 @@ import './App.css';
 
 import Siderbar from './layouts/Siderbar'
 import { BrowserRouter, Route } from 'react-router-dom'
+import * as RouterName from './routers/router'
 
 import EmployeeList from './screens/employees/EmployeeList'
 import EmployeeAdd from './screens/employees/EmployeeAdd'
@@ -10,6 +11,9 @@ import CustomerList from './screens/customers/CustomerList'
 import CustomerAdd from './screens/customers/CustomerAdd'
 import VendorList from './screens/vendors/VendorList'
 import VendorAdd from './screens/vendors/VendorAdd'
+import PayEmployee from './screens/pay/PayEmployee'
+import Payroll from './screens/pay/Payroll'
+
 
 import { getDataFromLocal } from './utils/storage'
 
@@ -20,12 +24,16 @@ function App() {
 
   const currContents = (
     <div>
-      <Route path='/employeelist' exact component={EmployeeList} />
-      <Route path='/employeeadd' exact component={EmployeeAdd} />
-      <Route path='/customerlist' exact component={CustomerList} />
-      <Route path='/customeradd' exact component={CustomerAdd} />
-      <Route path='/vendorlist' exact component={VendorList} />
-      <Route path='/vendoradd' exact component={VendorAdd} />
+      <Route path={RouterName.EmployeeList} exact component={EmployeeList} />
+      <Route path={RouterName.EmployeeAdd} exact component={EmployeeAdd} />
+      <Route path={RouterName.CustomerList}  exact component={CustomerList} />
+      <Route path={RouterName.CustomerAdd}  exact component={CustomerAdd} />
+      <Route path={RouterName.VendorList}  exact component={VendorList} />
+      <Route path={RouterName.VendorAdd}  exact component={VendorAdd} />
+      <Route path={RouterName.PayEmployee}  exact component={PayEmployee} />
+      <Route path={RouterName.Payroll}  exact component={Payroll} />
+
+
     </div>
   )
 

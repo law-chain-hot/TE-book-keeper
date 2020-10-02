@@ -1,7 +1,7 @@
 import React from 'react'
 import './EmployeeAdd.css'
 
-import AntForm from '../../components/AntFormEmploy'
+import AntForm from '../../components/AntFormEmployee'
 
 const EmployeeAdd = function () {
 
