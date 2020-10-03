@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 
 
-import { addVendor } from '../utils/storage'
+import { addEmployee } from '../../utils/storage'
 import uniqid from 'uniqid'
 
 
@@ -29,16 +29,17 @@ const AntForm = () => {
   const reset = useRef(null)
   const onFinish = (values) => {
     values.user.id = uniqid()
+
     console.log(values);
-    addVendor(values.user)
+    addEmployee(values.user)
     reset.current.resetFields()
   };
-
+ 
   return (
     <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages} labelAlign='right' ref={reset}>
       <Form.Item
-        name={['user', 'companyName']}
-        label="Company Name"
+        name={['user', 'firstName']}
+        label="First Name"
         rules={[
           {
             required: true,
@@ -48,23 +49,25 @@ const AntForm = () => {
         <Input />
       </Form.Item>
       <Form.Item
-        name={['user', 'part']}
-        label="Part"
+        name={['user', 'lastName']}
+        label="Last Name"
+        rules={[
+          {
+            required: true,
+          }
+        ]}
       >
         <Input />
       </Form.Item>
-
-      <Form.Item
-        name={['user', 'priceUnit']}
-        label="Price/Unit"
-      >
-        <Input />
-      </Form.Item>
-
 
       <Form.Item
         name={['user', 'address1']}
         label="Address 1"
+        rules={[
+          {
+            required: true,
+          }
+        ]}
       >
         <Input />
       </Form.Item>
@@ -72,6 +75,11 @@ const AntForm = () => {
       <Form.Item
         name={['user', 'address2']}
         label="Address 2"
+        rules={[
+          {
+            required: true,
+          }
+        ]}
       >
         <Input />
       </Form.Item>
@@ -79,6 +87,11 @@ const AntForm = () => {
       <Form.Item
         name={['user', 'city']}
         label="City"
+        rules={[
+          {
+            required: true,
+          }
+        ]}
       >
         <Input />
       </Form.Item>
@@ -86,6 +99,11 @@ const AntForm = () => {
       <Form.Item
         name={['user', 'state']}
         label="State"
+        rules={[
+          {
+            required: true,
+          }
+        ]}
       >
         <Input />
       </Form.Item>
@@ -93,7 +111,48 @@ const AntForm = () => {
       <Form.Item
         name={['user', 'zipCode']}
         label="Zip Code"
+        rules={[
+          {
+            required: true,
+          }
+        ]}
       >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        name={['user', 'ssn']}
+        label="Social Security Number(numbers only)"
+        rules={[
+          {
+            type: 'string',
+            len: 9,
+            required: true,
+          },
+        ]}
+      >
+        <Input maxLength='9' />
+      </Form.Item>
+
+      <Form.Item 
+        name={['user', 'withholding']} 
+        label="Withholding"
+        rules={[
+          {
+            required: true,
+          }
+        ]}  
+      >
+        <Input />
+      </Form.Item>
+      <Form.Item 
+        name={['user', 'salary']} 
+        label="Salary (Dollars)"
+        rules={[
+          {
+            required: true,
+          }
+        ]}>
         <Input />
       </Form.Item>
 

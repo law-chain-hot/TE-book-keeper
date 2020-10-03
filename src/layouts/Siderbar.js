@@ -34,14 +34,6 @@ class Siderbar extends React.Component {
     }
   }
 
-  // handleHome = ''
-  // handleEmployeeList = "employeelist"
-  // handleEmployeeAdd = "employeeadd"
-  // handleCustomerList = "customerlist"
-  // handleCustomerAdd = "customeradd"
-  // handleVendorList = "vendorlist"
-  // handleVendorAdd = "vendoradd"
-
   handleClearData = (e) => { localStorage.clear() }
 
   render() {
@@ -71,12 +63,22 @@ class Siderbar extends React.Component {
               <Menu.Item key="41" onClick={this.handleRouter(RouterName.PayEmployee)}>Pay Employee</Menu.Item>
               <Menu.Item key="42" onClick={this.handleRouter(RouterName.Payroll)}>Payroll</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub9" icon={<TeamOutlined />} title="Team">
-              <Menu.Item key="6">Team 1</Menu.Item>
-              <Menu.Item key="8">Team 2</Menu.Item>
+            <Menu.Item key="1" icon={<DesktopOutlined />} onClick={this.handleRouter(RouterName.Inventory)}>
+              Inventory
+            </Menu.Item>
+            <SubMenu key="sub5" icon={<TeamOutlined />} title="Invoice">
+              <Menu.Item key="51" onClick={this.handleRouter(RouterName.Invoice)}>Create Invoice</Menu.Item>
+              <Menu.Item key="52" onClick={this.handleRouter(RouterName.InvoiceHistory)}>Invoice History</Menu.Item>
             </SubMenu>
-            <Menu.Item key="2" icon={<DesktopOutlined />}>
-              Option 2
+            <SubMenu key="sub6" icon={<TeamOutlined />} title="PO">
+              <Menu.Item key="61" onClick={this.handleRouter(RouterName.PO)}>Create PO</Menu.Item>
+              <Menu.Item key="62" onClick={this.handleRouter(RouterName.POHistory)}>PO History</Menu.Item>
+            </SubMenu>
+            <Menu.Item key="2" icon={<DesktopOutlined />} onClick={this.handleRouter(RouterName.IncomeStatement)}>
+              Income Statement
+            </Menu.Item>
+            <Menu.Item key="3" icon={<DesktopOutlined />} onClick={this.handleRouter(RouterName.BalanceSheet)}>
+              Balance Sheet
             </Menu.Item>
             <Menu.Item key="9" title="" onClick={this.handleClearData} id="btn-clear">
               <Button type='primary' danger>Clear Data</Button>
@@ -88,7 +90,7 @@ class Siderbar extends React.Component {
           <Content style={{ margin: '0 16px' }}>
             {this.props.contents}
           </Content>
-          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+          {/* <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer> */}
         </Layout>
       </Layout>
     );

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import AntForm from '../../components/AntFormPayEmployee'
+import AntForm from '../../components/Forms/AntFormPayEmployee'
 import { getEmployee } from '../../utils/storage'
 
 const PayEmployee = function () {

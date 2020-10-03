@@ -1,10 +1,14 @@
 import React, { useRef } from 'react'
 
 
-import { payByID } from '../utils/storage'
+import { addVendor } from '../../utils/storage'
+import uniqid from 'uniqid'
+// import mapTitle from '../../utils/mapTitle'
+import mapTitle from '../../utils/mapTitle'
 
 
-import { Form, Input, InputNumber, Button, Select } from 'antd';
+
+import { Form, Input, InputNumber, Button } from 'antd';
 const layout = {
   labelCol: {
     span: 6,
@@ -27,26 +31,32 @@ const validateMessages = {
 const AntForm = (props) => {
   const reset = useRef(null)
   const onFinish = (values) => {
+    values.user.id = uniqid()
     console.log(values);
-    payByID(values.user.id)
+    addVendor(values.user)
     reset.current.resetFields()
   };
 
-  const Options = props.employees.map(employee => {
+  const formItems = props.items.map(item => {
     return (
-      <Select.Option key={employee.id} value={employee.id}>{employee.firstName || null} {employee.lastName || null}</Select.Option>
+      <Form.Item
+        name={['user', item.name]}
+        label={mapTitle[item.name]}
+        rules={[
+          {
+            required: true,
+          }
+        ]}
+      >
+        <Input />
+      </Form.Item>
     )
   })
 
   return (
     <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages} labelAlign='right' ref={reset}>
-      <Form.Item 
-        name={['user', 'id']}
-        label="Employees">
-        <Select>
-          {Options}
-        </Select>
-      </Form.Item>
+ 
+      {formItems}
 
       <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
         <Button type="primary" htmlType="submit">

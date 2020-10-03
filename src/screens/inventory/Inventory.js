@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react'
 
-import { getPayroll } from '../../utils/storage'
+import { getInventory } from '../../utils/storage'
 
 import CommonListComponent from '../../components/Common/CommonListComponent'
 
-const Payroll = function() {
-    const pageName = 'Payroll list'
+const Inventory = function() {
+    const pageName = 'Inventory'
 
     return(
         <CommonListComponent
-            getDisplayData={getPayroll}
+            getDisplayData={getInventory}
             pageName={pageName}
         />
 
     )
 }
 
-export default Payroll
+export default Inventory

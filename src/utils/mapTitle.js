@@ -13,11 +13,29 @@ const mapTitle = {
     price: "Price",
     // vendor
     part: "Part",
-    priceUnit: "Price/Unit",
+    priceUnit: "Price/Unit ($)",
 
     // Pay
     employee: "Employee",
     dispusement: "Dispusement",
+    date: "Date",
+
+    // Inventory
+    quantity: 'Quantity',
+    iron: "Iron",
+    wood: "Wood",
+    value: "Value ($)",
+    total: "Total ($)",
+
+    // Invoice
+    customer: "Customer",
+    invoiceNumber: "No.",
+
+    // PO
+    PONumber: "PO NO.",
+    supplier: "Supplier",
+
+
         
 }
 

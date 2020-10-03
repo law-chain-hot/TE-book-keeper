@@ -1,6 +1,6 @@
 import React from 'react'
 
-import AntForm from '../../components/AntFormCustomer'
+import AntForm from '../../components/Forms/AntFormCustomer'
 
 const CustomerAdd = function () {
 

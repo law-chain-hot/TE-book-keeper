@@ -13,6 +13,16 @@ import VendorList from './screens/vendors/VendorList'
 import VendorAdd from './screens/vendors/VendorAdd'
 import PayEmployee from './screens/pay/PayEmployee'
 import Payroll from './screens/pay/Payroll'
+import Inventory from './screens/inventory/Inventory'
+import Invoice from './screens/invoice/CreatInvoice'
+import InvoiceHistory from './screens/invoice/InvoiceHistory'
+import PO from './screens/purchase/PO'
+import POHistory from './screens/purchase/POHistory'
+import IncomeStatement from './screens/incomestatement/IncomeStatement'
+import BalanceSheet from './screens/balanceSheet/BalanceSheet'
+
+
+
 
 
 import { getDataFromLocal } from './utils/storage'
@@ -32,6 +42,13 @@ function App() {
       <Route path={RouterName.VendorAdd}  exact component={VendorAdd} />
       <Route path={RouterName.PayEmployee}  exact component={PayEmployee} />
       <Route path={RouterName.Payroll}  exact component={Payroll} />
+      <Route path={RouterName.Inventory}  exact component={Inventory} />
+      <Route path={RouterName.Invoice}  exact component={Invoice} />
+      <Route path={RouterName.InvoiceHistory}  exact component={InvoiceHistory} />
+      <Route path={RouterName.PO}  exact component={PO} />
+      <Route path={RouterName.POHistory}  exact component={POHistory} />
+      <Route path={RouterName.IncomeStatement}  exact component={IncomeStatement} />
+      <Route path={RouterName.BalanceSheet}  exact component={BalanceSheet} />
 
 
     </div>

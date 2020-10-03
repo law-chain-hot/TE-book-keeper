@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import AntTable from '../../components/AntTable'
+import AntTable from '../../components/Tables/AntTable'
 
 import { getVendors } from '../../utils/storage'
 import mapTitle from '../../utils/mapTitle'
@@ -33,3 +33,4 @@ const VendorList = function () {
 }
 
 export default VendorList
+
