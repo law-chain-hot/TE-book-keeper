@@ -60,7 +60,7 @@ let defaultValue = {
     payroll: 0,
     payrollWithholding: 0,
     bills: 0,
-    annualExpenses: 16666.66,
+    annualExpenses: 10000,
   },
 
   income: {

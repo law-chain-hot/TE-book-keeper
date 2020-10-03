@@ -13,6 +13,10 @@ import {
   TeamOutlined,
   UserOutlined,
   AccountBookTwoTone,
+  RobotOutlined,
+  ContactsOutlined,
+  DollarOutlined,
+  AlipayCircleOutlined,
 } from '@ant-design/icons';
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -34,7 +38,9 @@ class Siderbar extends React.Component {
     }
   }
 
-  handleClearData = (e) => { localStorage.clear() }
+  handleClearData = (e) => { 
+    localStorage.clear() 
+  }
 
   render() {
     return (
@@ -44,7 +50,7 @@ class Siderbar extends React.Component {
             <AccountBookTwoTone id='icon-home'/> Book-Keeper
           </Button>
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-            <SubMenu key="sub0" icon={<PieChartOutlined />} title="Employees">
+            <SubMenu key="sub0" icon={<RobotOutlined />} title="Employees">
               <Menu.Item key="11" onClick={this.handleRouter(RouterName.EmployeeList)}>List Employees</Menu.Item>
               <Menu.Item key="12" onClick={this.handleRouter(RouterName.EmployeeAdd)}>Add Employee</Menu.Item>
             </SubMenu>
@@ -54,12 +60,12 @@ class Siderbar extends React.Component {
               <Menu.Item key="22" onClick={this.handleRouter(RouterName.CustomerAdd)}>Add Customer</Menu.Item>
             </SubMenu>
 
-            <SubMenu key="sub3" icon={<UserOutlined />} title="Vendors">
+            <SubMenu key="sub3" icon={<ContactsOutlined />} title="Vendors">
               <Menu.Item key="31" onClick={this.handleRouter(RouterName.VendorList)}>List Vendors</Menu.Item>
-              <Menu.Item key="32" onClick={this.handleRouter(RouterName.VendorAdd)}>Add Customer</Menu.Item>
+              <Menu.Item key="32" onClick={this.handleRouter(RouterName.VendorAdd)}>Add Vendor</Menu.Item>
             </SubMenu>
 
-            <SubMenu key="sub4" icon={<UserOutlined />} title="Pay">
+            <SubMenu key="sub4" icon={<DollarOutlined />} title="Pay">
               <Menu.Item key="41" onClick={this.handleRouter(RouterName.PayEmployee)}>Pay Employee</Menu.Item>
               <Menu.Item key="42" onClick={this.handleRouter(RouterName.Payroll)}>Payroll</Menu.Item>
             </SubMenu>
@@ -70,7 +76,7 @@ class Siderbar extends React.Component {
               <Menu.Item key="51" onClick={this.handleRouter(RouterName.Invoice)}>Create Invoice</Menu.Item>
               <Menu.Item key="52" onClick={this.handleRouter(RouterName.InvoiceHistory)}>Invoice History</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub6" icon={<TeamOutlined />} title="PO">
+            <SubMenu key="sub6" icon={<AlipayCircleOutlined />} title="PO">
               <Menu.Item key="61" onClick={this.handleRouter(RouterName.PO)}>Create PO</Menu.Item>
               <Menu.Item key="62" onClick={this.handleRouter(RouterName.POHistory)}>PO History</Menu.Item>
             </SubMenu>
@@ -80,8 +86,8 @@ class Siderbar extends React.Component {
             <Menu.Item key="3" icon={<DesktopOutlined />} onClick={this.handleRouter(RouterName.BalanceSheet)}>
               Balance Sheet
             </Menu.Item>
-            <Menu.Item key="9" title="" onClick={this.handleClearData} id="btn-clear">
-              <Button type='primary' danger>Clear Data</Button>
+            <Menu.Item key="9" title="" onClick={this.handleClearData} id="btn-clear" >
+              <Button type='primary' danger href='http://localhost:3000/employeelist'>Clear Data</Button>
             </Menu.Item>
           </Menu>
         </Sider>

@@ -38,19 +38,36 @@ const AntForm = (props) => {
   };
 
   const formItems = props.items.map(item => {
-    return (
-      <Form.Item
-        name={['user', item.name]}
-        label={mapTitle[item.name]}
-        rules={[
-          {
-            required: true,
-          }
-        ]}
-      >
-        <Input />
-      </Form.Item>
-    )
+    if(item.name === 'priceUnit'){
+      return(
+        <Form.Item
+          name={['user', item.name]}
+          label={mapTitle[item.name]}
+          rules={[
+            {
+              required: true,
+            }
+          ]}
+        >
+          <Input type='number' />
+        </Form.Item>
+      )
+    } else{
+
+      return (
+        <Form.Item
+          name={['user', item.name]}
+          label={mapTitle[item.name]}
+          rules={[
+            {
+              required: true,
+            }
+          ]}
+        >
+          <Input />
+        </Form.Item>
+      )
+    }
   })
 
   return (

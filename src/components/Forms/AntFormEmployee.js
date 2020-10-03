@@ -153,7 +153,7 @@ const AntForm = () => {
             required: true,
           }
         ]}>
-        <Input />
+        <Input type='number'/>
       </Form.Item>
 
       <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>

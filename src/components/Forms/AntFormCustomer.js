@@ -132,8 +132,14 @@ const AntForm = (props) => {
         <Input />
       </Form.Item>
 
-      <Form.Item name={['user', 'price']} label="Price" rules={[{required: true}]}>
-        <Input />
+      <Form.Item name={['user', 'price']} label="Price" 
+        rules={[
+          {
+            required: true
+          }
+        ]}
+      >
+        <Input type='number'/>
       </Form.Item>
 
       <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
