@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/TE-book-keeper/precache-manifest.750558f9abfd97c91ae859c577c0888b.js"
+  "/TE-book-keeper/precache-manifest.cb87632874c7c73ce3c8addf58f41903.js"
 );
 
 self.addEventListener('message', (event) => {

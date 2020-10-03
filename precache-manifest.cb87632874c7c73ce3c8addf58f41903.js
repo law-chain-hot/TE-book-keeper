@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "68b923843243eed7237ae2ada20fbc3e",
+    "revision": "74192382d13de14b7241373ba2847708",
     "url": "/TE-book-keeper/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/TE-book-keeper/static/css/2.220ccb42.chunk.css"
   },
   {
-    "revision": "b05638aa60eed512a46c",
+    "revision": "c25a4f09077e80e3a905",
     "url": "/TE-book-keeper/static/css/main.dd0bb94c.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/TE-book-keeper/static/js/2.343615bf.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b05638aa60eed512a46c",
-    "url": "/TE-book-keeper/static/js/main.e70ba73e.chunk.js"
+    "revision": "c25a4f09077e80e3a905",
+    "url": "/TE-book-keeper/static/js/main.6fc2fa5d.chunk.js"
   },
   {
     "revision": "a619aef247691a3a5975",
