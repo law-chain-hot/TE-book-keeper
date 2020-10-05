@@ -7,7 +7,8 @@ import mapTitle from '../../utils/mapTitle'
 
 function setCol(displayData) {
     if (displayData.length === 0) return []
-    return Object.keys(displayData[0]).map(cur => {
+    console.log("setCol -> Object.keys(displayData[0]).filter(cur => cur !== 'id')", Object.keys(displayData[0]).filter(cur => cur !== 'id'))
+    return Object.keys(displayData[0]).filter(cur => cur !== 'id').map(cur => {
         return {
             title: mapTitle[cur],
             dataIndex: cur,

@@ -69,7 +69,7 @@ class Siderbar extends React.Component {
               <Menu.Item key="41" onClick={this.handleRouter(RouterName.PayEmployee)}>Pay Employee</Menu.Item>
               <Menu.Item key="42" onClick={this.handleRouter(RouterName.Payroll)}>Payroll</Menu.Item>
             </SubMenu>
-            <Menu.Item key="1" icon={<DesktopOutlined />} onClick={this.handleRouter(RouterName.Inventory)}>
+            <Menu.Item key="test" icon={<DesktopOutlined />} onClick={this.handleRouter(RouterName.Inventory)}>
               Inventory
             </Menu.Item>
             <SubMenu key="sub5" icon={<TeamOutlined />} title="Invoice">
@@ -87,7 +87,7 @@ class Siderbar extends React.Component {
               Balance Sheet
             </Menu.Item>
             <Menu.Item key="9" title="" onClick={this.handleClearData} id="btn-clear" >
-              <Button type='primary' danger href='http://localhost:3000/employeelist'>Clear Data</Button>
+              <Button type='primary' danger href='https://law-chain-hot.github.io/TE-book-keeper/'>Clear Data</Button>
             </Menu.Item>
           </Menu>
         </Sider>

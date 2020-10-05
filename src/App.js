@@ -5,6 +5,7 @@ import Siderbar from './layouts/Siderbar'
 import { BrowserRouter, Route } from 'react-router-dom'
 import * as RouterName from './routers/router'
 
+import Home from './screens/home'
 import EmployeeList from './screens/employees/EmployeeList'
 import EmployeeAdd from './screens/employees/EmployeeAdd'
 import CustomerList from './screens/customers/CustomerList'
@@ -25,6 +26,7 @@ import BalanceSheet from './screens/balanceSheet/BalanceSheet'
 
 
 
+
 import { getDataFromLocal } from './utils/storage'
 
 getDataFromLocal()
@@ -34,6 +36,7 @@ function App() {
 
   const currContents = (
     <div>
+      <Route path={RouterName.Home} exact component={Home} />
       <Route path={RouterName.EmployeeList} exact component={EmployeeList} />
       <Route path={RouterName.EmployeeAdd} exact component={EmployeeAdd} />
       <Route path={RouterName.CustomerList}  exact component={CustomerList} />

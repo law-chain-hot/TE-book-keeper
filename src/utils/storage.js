@@ -42,7 +42,7 @@ let defaultValue = {
   inventory: {
     data: [
       {
-        part: 'Iron',
+        part: 'Steel',
         priceUnit: 1,
         quantity: 1000,
         value: 0
@@ -173,6 +173,8 @@ export const payByID = (id) => {
 
 export const addPayroll = (employee) => {
   const [salary, withholding, dispusement] = calculatePay(employee)
+  // console.log(parseInt(employee.withholding), parseInt(withholding))
+  employee.withholding = parseInt(employee.withholding) + parseInt(withholding) // update the employee's withholding
   updateCash(-salary)
   updateExpenses('payroll', dispusement)
   updateExpenses('payrollWithholding', withholding)

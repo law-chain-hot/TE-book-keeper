@@ -22,7 +22,7 @@ const mapTitle = {
 
     // Inventory
     quantity: 'Quantity',
-    iron: "Iron",
+    steel: "Steel",
     wood: "Wood",
     value: "Value ($)",
     total: "Total ($)",
