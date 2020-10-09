@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/TE-book-keeper/static/css/main.020bc16d.chunk.css",
+    "main.css": "/TE-book-keeper/static/css/main.06e76622.chunk.css",
     "main.js": "/TE-book-keeper/static/js/main.6e72a409.chunk.js",
     "main.js.map": "/TE-book-keeper/static/js/main.6e72a409.chunk.js.map",
     "runtime-main.js": "/TE-book-keeper/static/js/runtime-main.03c8c4cb.js",
@@ -9,17 +9,17 @@
     "static/js/2.5c301460.chunk.js": "/TE-book-keeper/static/js/2.5c301460.chunk.js",
     "static/js/2.5c301460.chunk.js.map": "/TE-book-keeper/static/js/2.5c301460.chunk.js.map",
     "index.html": "/TE-book-keeper/index.html",
-    "precache-manifest.d8392f7e756c81ab819ba69fd5399072.js": "/TE-book-keeper/precache-manifest.d8392f7e756c81ab819ba69fd5399072.js",
+    "precache-manifest.77efada578faa0c01cd95a6c5e648235.js": "/TE-book-keeper/precache-manifest.77efada578faa0c01cd95a6c5e648235.js",
     "service-worker.js": "/TE-book-keeper/service-worker.js",
     "static/css/2.220ccb42.chunk.css.map": "/TE-book-keeper/static/css/2.220ccb42.chunk.css.map",
-    "static/css/main.020bc16d.chunk.css.map": "/TE-book-keeper/static/css/main.020bc16d.chunk.css.map",
+    "static/css/main.06e76622.chunk.css.map": "/TE-book-keeper/static/css/main.06e76622.chunk.css.map",
     "static/js/2.5c301460.chunk.js.LICENSE.txt": "/TE-book-keeper/static/js/2.5c301460.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.03c8c4cb.js",
     "static/css/2.220ccb42.chunk.css",
     "static/js/2.5c301460.chunk.js",
-    "static/css/main.020bc16d.chunk.css",
+    "static/css/main.06e76622.chunk.css",
     "static/js/main.6e72a409.chunk.js"
   ]
 }
